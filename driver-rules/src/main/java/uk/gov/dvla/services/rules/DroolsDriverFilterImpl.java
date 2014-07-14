@@ -8,7 +8,9 @@ import uk.gov.dvla.services.filter.FilterService;
 public class DroolsDriverFilterImpl implements FilterService<Driver>, ManagedService {
     @Override
     public RulesDriver filter(Driver objectToFilter, String context) {
-        return new RulesDriver();
+        RulesDriver rulesDriver = new RulesDriver();
+        rulesDriver.setDriver(objectToFilter);
+        return rulesDriver;
     }
 
     @Override
